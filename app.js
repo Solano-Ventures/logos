@@ -1,6 +1,12 @@
 var app = angular.module('myApp', []);
 
-app.controller('formController', function($scope, $q, RouterService, $http) {
+app.config(function($routeProvider) {
+		.when('/', {
+				templateUrl: views/formView.html,
+				controller: 'FormController'
+		})
+});
+app.controller('FormController', function($scope, $q, RouterService, $http) {
 				$scope.myForm = {};
 				$scope.myForm.name = "";
 				$scope.myForm.email = "";
