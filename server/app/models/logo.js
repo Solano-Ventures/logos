@@ -5,8 +5,7 @@ var logoSchema = mongoose.Schema({
  firstName: String,
  lastName: String,
  relatesTo: String,
- color: String,
- result: String // [RGBA(###,###,###,#), ..., RGBA(###,###,###,#)]
+ color: String
 });
 
 var Link = mongoose.model('Link', logoSchema);
