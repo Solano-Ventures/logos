@@ -1,6 +1,4 @@
-app
-		.service('RouterService', function($http, $q) {
-
+app.service('RouterService', function($http, $q) {
 				//API
 				return({
 						formPost: formPost,
@@ -45,6 +43,4 @@ app
 				function handleSuccess(response) {
 						return response.data;
 				}
-		});/**
-	* Created by Macnube on 9/2/14.
-	*/
+		});

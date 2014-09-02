@@ -1,6 +1,3 @@
-/**
-	* Created by Macnube on 8/29/14.
-	*/
 var app = angular.module('myApp', []);
 
 app.controller('formController', function($scope, $q, RouterService, $http) {
