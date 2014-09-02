@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="router.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="myApp">
+<div class="navigation">
+    <form class="login form">
+        E-mail : <input type="text" name="email">
+        Password : <input type="text" name="password">
+        <button type="button">Login</button>
+    </form>
+
+    <br>
+    <br>
+</div>
+<div class="form" ng-controller="formController">
+    <form class="form">
+       Name :  <input type="text" name="name" ng-model="myForm.name"><br>
+       E-mail :  <input type="text" name="email" ng-model="myForm.email"><br>
+       What are you about? <input type="text" name="value" ng-model="myForm.value"><br>
+        <button type="button" ng-click="clickSubmit()">Submit</button>
+        {{myForm.name}} {{myForm.email}} {{myForm.value}}
+    </form>
+</div>
+</body>
+</html>
