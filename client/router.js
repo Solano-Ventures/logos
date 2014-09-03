@@ -1,4 +1,7 @@
-app.service('RouterService', function($http, $q) {
+
+
+angular.module('myApp')
+		.service('RouterService', function($http, $q) {
     //API
     return({
       formPost: formPost,
