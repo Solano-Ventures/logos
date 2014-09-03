@@ -1,7 +1,7 @@
 
 
 angular.module('myApp')
-		.service('RouterService', function($http, $q) {
+    .service('RouterService', function($http, $q) {
     //API
     return({
       formPost: formPost,
