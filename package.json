@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Solano-Ventures/logos",
   "dependencies": {
+    "body-parser": "^1.7.0",
     "express": "^4.8.6",
     "grunt": "^0.4.5",
     "mongodb": "^1.4.9",
