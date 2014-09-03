@@ -1,11 +1,9 @@
-
-
 angular.module('myApp')
-		.service('RouterService', function($http, $q) {
+  .service('RouterService', function ($http, $q) {
     //API
     return({
       formPost: formPost,
-      formPostTest : formPostTest
+      formPostTest: formPostTest
     });
 
     //public methods
@@ -18,16 +16,17 @@ angular.module('myApp')
         method: 'POST',
         url: 'serverURLHERE',
         data: {
-          name : name,
-          email : email,
-          value : value
+          name: name,
+          email: email,
+          value: value
         }
       });
 
       return (request.then(handleSuccess, handleError));
 
     }
-    function formPostTest (formObj) {
+
+    function formPostTest(formObj) {
       return console.log(formObj);
     }
 
@@ -35,9 +34,9 @@ angular.module('myApp')
 
     function handleError(response) {
       if (
-        ! angular.isObject(response.data) ||
-        ! response.data.message
-        ) { return	$.reject('An unknown error occurred.');
+        !angular.isObject(response.data) || !response.data.message
+        ) {
+        return $.reject('An unknown error occurred.');
       } else {
         return $q.reject(response.data.message);
       }

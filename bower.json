@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "angular": "~1.2.23",
+				"angular-route": "~1.2.23",
     "d3": "~3.4.11",
     "underscore": "~1.7.0"
   }
