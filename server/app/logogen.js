@@ -2,7 +2,7 @@ exports.logoGen = function(firstname, lastname, definedBy, color){
   firstname = firstname || 'firstname';
   lastname = lastname || 'lastname';
   definedBy = definedBy || 'definedBy';
-  var boxSize = 10 * 10;
+  var boxSize = 50 * 50;
   var result = [];
 
   // get color and slice off the opacity
@@ -14,7 +14,6 @@ exports.logoGen = function(firstname, lastname, definedBy, color){
 
   for ( var i = 0; i < boxSize; i++ ){
     // add random opacity for each color
-    console.log(currentOpa)
     currentOpa = +(currentOpa + .05).toFixed(2);
     if ( currentOpa > 1 ){
       currentOpa = Math.ceil( 1 / uniqueProp * 100) / 100;
@@ -27,8 +26,8 @@ exports.logoGen = function(firstname, lastname, definedBy, color){
 
 // random color generator if none sent from application
 var randomColor = function(){
-  return 'RGBA(' + Math.ceil(Math.random()*225) + ', '
-                 + Math.ceil(Math.random()*225) + ', '
-                 + Math.ceil(Math.random()*225) + ', '
+  return 'RGBA(' + Math.ceil(Math.random()*225) + ','
+                 + Math.ceil(Math.random()*225) + ','
+                 + Math.ceil(Math.random()*225) + ','
                  + '1.0' + ')';
 };
