@@ -5,6 +5,9 @@
 .LSOverride
 Icon
 
+###WEBSTORM###
+.idea
+
 # Thumbnails
 ._*
 # Files that might appear on external disk
