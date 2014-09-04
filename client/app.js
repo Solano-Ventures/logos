@@ -10,6 +10,13 @@ angular.module('myApp', ['ngRoute'])
         templateUrl: 'views/loginView.html',
         controller: 'LoginController'
       })
+
+      .when('/signup',{
+        templateUrl: 'views/signupView.html',
+        controller: 'SignupController'
+      })
+
+      .otherwise({redirectTo:'/'})
   })
   .controller('FormController', function ($scope, $q, RouterService) {
     $scope.myForm = {};
@@ -32,6 +39,20 @@ angular.module('myApp', ['ngRoute'])
       if($scope.loginForm.email && $scope.loginForm.password){
         console.log("Login Submit was fired!")
         RouterService.formPostTest($scope.loginForm)
+      } else {
+         console.log("needs all inputs")
+      }
+    }
+  })
+
+  .controller('SignupController', function ($scope, $q, RouterService) {
+    $scope.signupForm = {}; 
+    $scope.signupForm.email = "";
+    $scope.signupForm.password = "";
+    $scope.signupSubmit = function(){
+      if($scope.signupForm.email && $scope.signupForm.password){
+        console.log("Signup Submit was fired!")
+        RouterService.formPostTest($scope.signupForm)
       } else {
          console.log("needs all inputs")
       }
