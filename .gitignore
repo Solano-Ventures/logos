@@ -8,6 +8,10 @@ Icon
 ###WEBSTORM###
 .idea
 
+###SUBLIME###
+*.sublime-project
+*.sublime-workspace
+
 # Thumbnails
 ._*
 # Files that might appear on external disk
