@@ -37,16 +37,16 @@ var showGraph = function(logoData, numCells){
                 .attr("fill-opacity", 0);
 
   svg.selectAll(".cell").transition()
-                .delay(function(d,i){ return  Math.floor(Math.random() * 1000) })
+                .delay(function(d,i){ return  Math.floor(Math.random() * 0) })
                 .attr("fill-opacity", function(d,i){
                   return d.slice(-4,-1);
                 });
 
-  svg.selectAll(".cell").on("mouseover",function(d,i){
-                          d3.select(this)
-                            .transition().delay(5)
-                            .attr('fill', randomColor())
-                        });
+  // svg.selectAll(".cell").on("mouseover",function(d,i){
+  //                         d3.select(this)
+  //                           .transition().delay(5)
+  //                           .attr('fill', randomColor())
+  //                       });
 
 };
 	
