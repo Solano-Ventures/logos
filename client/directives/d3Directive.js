@@ -1,5 +1,5 @@
-angular.module('myApp.directives', [])
-  .directive('barChart', [ function () {
+angular.module('myApp.directives')
+  .directive('logoDisplay', [ function () {
     return {
       restrict: 'EA',
       replace: true,
@@ -12,7 +12,9 @@ angular.module('myApp.directives', [])
           .style('width', '100%')
           .style('height', '100%');
 
-          scope.$watch('data', function (logoData) {
+          scope.$watch('data.logos', function (logoData) {
+            console.log('watcher fired');
+            console.log(logoData);
 
           var numCells = Math.sqrt(logoData.length);
 
@@ -44,7 +46,8 @@ angular.module('myApp.directives', [])
                 'fill-opacity' : 0
               })
               .transition()
-              .delay(function() { return Math.floor(Math.random() * 2000); })
+              .duration(4000)
+              .delay(function() { return Math.floor(Math.random() * 3000); })
               .attr('fill-opacity', function() {
                 return item.slice(-4, -1);
               });

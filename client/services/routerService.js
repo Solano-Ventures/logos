@@ -1,30 +1,36 @@
-angular.module('myApp')
-  .service('RouterService', function ($http, $q) {
-    //API
-
+angular.module('myApp.services')
+  .service('RouterService', function ($http, $q, $location) {
+    var storage = [];
 
     //public methods
     function formPost (formObj) {
-      var name = formObj.name;
-      var email = formObj.email;
-      var value = formObj.value;
-
       var request = $http({
         method: 'POST',
         url: 'http://localhost:8000/logo',
-        data: {
-          name: name,
-          email: email,
-          value: value
-        }
+        data: formObj
       });
 
-      return (request.then(handleSuccess, handleError));
-
+      return (request.then(function(response) {
+        storage.push(response.data);
+        logoGet();
+      }, handleError));
     }
 
-    function formPostTest(formObj) {
-      return console.log(formObj);
+    function logoGet() {
+      var request = $http({
+        method: 'GET',
+        url: 'http://localhost:8000/signup'
+      });
+
+      request.then(function(response) {
+        $location.path('/logo');
+      });
+    }
+
+    function getLogo() {
+      var logo = storage.pop();
+      console.log(logo);
+      return logo.logo;
     }
 
     //private methods
@@ -38,14 +44,13 @@ angular.module('myApp')
     }
 
     function handleSuccess(response) {
-      console.log(response);
-      console.log('response received!');
       return response.data;
     }
 
 
     return({
       formPost: formPost,
-      formPostTest: formPostTest
+      getLogo : getLogo,
+      logoGet : logoGet
     });
   });

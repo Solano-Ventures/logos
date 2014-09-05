@@ -1,5 +1,5 @@
 body {
-  background: url(pixel.jpg);
+
 }
 
 /* //////// header styling ///////// */
@@ -71,6 +71,9 @@ div .formDiv {
 #d3logo {
   width: 50%;
   height: 50%;
+  max-width: 50%;
+  max-height: 600px;
+  border: 1px solid black;
 }
 
 .formDiv button:hover{
