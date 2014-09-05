@@ -1,6 +1,3 @@
-/**
- * Created by Macnube on 9/4/14.
- */
 angular.module('myApp')
   .controller('d3Controller', function($scope) {
     $scope.data = [];
