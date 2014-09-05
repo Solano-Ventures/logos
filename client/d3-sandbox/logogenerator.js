@@ -2,7 +2,7 @@ d3.json("data.json", function(error, data){
     if (error) return console.warn(error);
     var numCells = Math.sqrt(data.logo.length);
     showGraph(data.logo, numCells);
-  }); 
+  });
 
 var showGraph = function(logoData, numCells){
 
@@ -30,7 +30,7 @@ var showGraph = function(logoData, numCells){
                   return counter.y * cellHeight;
                 })
                 .attr("width", cellWidth)
-                .attr("height", cellHeight)               
+                .attr("height", cellHeight)
                 .attr("fill", function(d,i){
                   return d;
                 })
@@ -49,7 +49,7 @@ var showGraph = function(logoData, numCells){
   //                       });
 
 };
-	
+
 var randomColor = function(){
   return 'RGBA(' + Math.ceil(Math.random()*225) + ','
                  + Math.ceil(Math.random()*225) + ','
