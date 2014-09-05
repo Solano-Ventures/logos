@@ -11,5 +11,6 @@ app.use( bodyParser.json() );
 
 app.get( '/', handler.renderIndex );
 app.get( '/*', handler.redirToIndex );
+app.post( '/signup', handler.signup );
 app.post( '/logo', handler.sendData );
 module.exports = app;

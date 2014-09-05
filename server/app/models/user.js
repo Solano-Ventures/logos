@@ -1,7 +1,7 @@
 var db = require('../config');
 
 var User = db.Model.extend({
-	userName: String,
+	email: String,
  	password: String,
  	logos: Array
 });

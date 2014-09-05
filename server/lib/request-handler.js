@@ -19,5 +19,9 @@ exports.sendData = function(req, res) {
   res.status(201).send(jsonLogo);
 };
 
-// test post request in terminal using the following command:
-// curl -H "Content-Type: application/json" -d '{"firstname":"Chris","lastname":"greatest","definedby":"cash money","color":"RGBA(123,123,123,1.0)"}' localhost:8000/logo
+exports.signup = function(req, res) {
+  var email = req.body.email;
+  var password = req.body.password;
+  console.log(req.body);
+};
+
