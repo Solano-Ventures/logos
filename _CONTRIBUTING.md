@@ -2,6 +2,8 @@
 <h3> Starting Up
 1. Make your own fork of the repo from Github.com
 2. Clone down your fork
+	- run npm install from the home directory
+	- run bower install from the home directory
 3. Create a remote head on logos/master
 ````
 > git remote add production https://github.com/Solano-Ventures/logos.git
