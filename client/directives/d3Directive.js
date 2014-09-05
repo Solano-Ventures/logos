@@ -12,26 +12,41 @@ angular.module('myApp.directives', [])
           .style('width', '100%')
           .style('height', '350px');
 
-        scope.$watch('data', function (newValue) {
+        scope.$watch('data', function (logoData) {
+
+          var numCells = Math.sqrt(logoData.length);
+
+          var cell = {
+            height: window.innerHeight/numCells,
+            width: window.innerWidth/numCells
+          };
+
+          var counter = {
+            x: 0,
+            y: 0
+          };
+
           vis.selectAll('*').remove();
 
-          angular.forEach(newValue, function (item, index) {
-            vis.append('rect')
+          angular.forEach(logoData, function (item, index) {
+            vis.append('svg:rect')
               .attr({
-                'height': 30,
-                'width': 0,
-                'x': 30,
-                'y': 30 * index,
-                'fill': 'red'
+                'height': cell.height,
+                'width': cell.width,
+                'x': function() {
+                  counter.x = (index % numCells ===0) ? 0: counter.x +=1 ;
+                  return counter.x * cell.width; },
+                'y': function() {
+                  if (index % numCells === 0) { counter.y++; }
+                  return counter.y * cell.height;
+                },
+                'fill': item,
+                'fill-opacity' : 0
               })
               .transition()
-              .duration(2000)
-              .attr({
-                'height': 30,
-                'width': item.score * 4,
-                'x': 30,
-                'y': 30 * index,
-                'fill': 'red'
+              .delay(function() { return Math.floor(Math.random() * 2000); })
+              .attr('fill-opacity', function() {
+                return item.slice(-4, -1);
               });
           });
         });
