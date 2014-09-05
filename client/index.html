@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
+    <link rel="stylesheet" type="text/css" href="/style.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.js"></script>
@@ -16,7 +17,7 @@
     <title></title>
 </head>
 <body ng-app="myApp">
-<div ng-controller="d3Controller">
+<div ng-controller="d3Controller" id="d3logo">
     <button ng-click="makeData();" name="Generate Dummy Data">Generate Dummy Data</button>
     <bar-chart data="data"></bar-chart>
 </div>

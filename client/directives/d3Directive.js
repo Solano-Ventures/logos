@@ -10,15 +10,15 @@ angular.module('myApp.directives', [])
         var vis = d3.select(element[0])
           .append('svg')
           .style('width', '100%')
-          .style('height', '350px');
+          .style('height', '100%');
 
-        scope.$watch('data', function (logoData) {
+          scope.$watch('data', function (logoData) {
 
           var numCells = Math.sqrt(logoData.length);
 
           var cell = {
-            height: window.innerHeight/numCells,
-            width: window.innerWidth/numCells
+            height: document.getElementById('d3logo').offsetHeight/numCells,
+            width: document.getElementById('d3logo').offsetWidth/numCells
           };
 
           var counter = {
