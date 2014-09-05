@@ -36,6 +36,12 @@ body {
 
 }
 
+/*remove this once the framework has been created*/
+#d3logo {
+  width: 50%;
+  height: 50%;
+}
+
 .form {
 }
 
