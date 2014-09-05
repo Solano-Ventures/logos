@@ -3,7 +3,7 @@ var characters = '0123456789!@#$%^&*()_+abcdefghijklmnopqrstuvwxyz';
 var charValue = {};
 for ( var i = 0; i < characters.length; i++ ){
   charValue[characters[i]] = i;
-};
+}
 
 // var logoGen = function(firstname, lastname, definedBy, color){
 exports.logoGen = function(firstname, lastname, definedBy, color){
@@ -37,10 +37,10 @@ exports.logoGen = function(firstname, lastname, definedBy, color){
     }
     return accum;
   }
-  
+
   // get value of current inputs
-  var uniqueID = Math.floor( addValue(firstname, 0.25) + 
-                             addValue(lastname, 0.5) + 
+  var uniqueID = Math.floor( addValue(firstname, 0.25) +
+                             addValue(lastname, 0.5) +
                              addValue(definedBy, 1) );
 
   // generate random array
@@ -52,8 +52,8 @@ exports.logoGen = function(firstname, lastname, definedBy, color){
     numLoops++;
     if ( opacities.length === 1 ){
       opacities.length--;
-      result.push(opacities[0]); 
-      delete opacities[loc];    
+      result.push(opacities[0]);
+      delete opacities[loc];
     } else {
       if ( opacities[loc] ){
         opacities.length--;
@@ -80,9 +80,9 @@ exports.logoGen = function(firstname, lastname, definedBy, color){
     result[i] = color + result[i] + ')' ;
   }
 
-  console.log('Your unique ID value is ' + uniqueID + ' while the box size is ' + boxSize + '.' + 
+  console.log('Your unique ID value is ' + uniqueID + ' while the box size is ' + boxSize + '.' +
               '\nYour algorithim took ' + numLoops + ' loops to execute... think you can do better? :)');
-  
+
   return result;
 };
 

@@ -11,5 +11,5 @@ angular.module('myApp')
         $scope.data.push({score: Math.floor(Math.random() * 100) });
       }
       console.log($scope.data);
-    }
+    };
   });

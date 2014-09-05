@@ -2,7 +2,7 @@
   "name": "GraciousUnicornsClientBuild",
   "version": "1.0.0",
   "description": "initial client-side development environment",
-  "main": "app.js",
+  "main": "client/app.js",
   "authors": [
     "'christopher mccloud",
     "jon sadka",
