@@ -74,6 +74,13 @@ Git Workflow
  ```
  > git rebase -i production/master
  ```
+
+1. The first of two dialogues will appear.  Make sure that only the first commit is set to 'pick'; all subsequent commits should be changed from pick to 'squash'.  Feel free to modify the comitt messages as you see fit.
+ ```
+ pick 5ae442f (feat) COMMIT MESSAGE THAT WILL SHOW ON MASTER
+ squash 95055b4 (feat) this description is not critical
+ squash 43beba7 (feat) this description is not critical
+ ```
  
 1. Push to your fork
  ```
