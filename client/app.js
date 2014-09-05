@@ -1,19 +1,19 @@
-angular.module('myApp', ['myApp.directives', 'ngRoute'])
+angular.module('myApp', ['ngFx','myApp.directives', 'ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/formView.html',
-        controller: 'FormController'
+        templateUrl: 'views/landingView.html',
+        /*controller: 'landingController'*/
       })
 
       .when('/login',{
         templateUrl: 'views/loginView.html',
-        controller: 'LoginController'
+       /* controller: 'LoginController'*/
       })
 
       .when('/signup',{
         templateUrl: 'views/signupView.html',
-        controller: 'SignupController'
+     /*   controller: 'SignupController'*/
       })
 
       .otherwise({redirectTo:'/'});

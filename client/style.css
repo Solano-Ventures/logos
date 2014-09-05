@@ -1,39 +1,70 @@
 body {
-  background-color: #e0c9a4;
+  background: url(pixel.jpg);
 }
 
-.navigation {
-  padding-right: 20px;
-  text-align: right;
-  font-family: verdana;
-  font-variant: bold;
-  font-size: 20px;
+/* //////// header styling ///////// */
+
+header{
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color:rgba(0,0,0,1);
+}
+
+header #logo{
+  display:inline-block;
+  padding:10px;
   color: white;
-  background-color: #3f51b5;
-  border-top: 20px solid #303f9f;
-  box-shadow: 2px 2px 5px black;
+  font-family: arial;
+  font-size:2em;
 }
 
-.navigation [name = email] {
-  width: 20%;
+header #login{
+  display:inline-block;
+  float:right;
+  padding:10px;
+  font-family:arial;
 }
 
-.navigation [name = password] {
-  width: 20%;
+#login button{
+  background-color:rgba(0,0,0,1);
+  color:white;
+  border-color:white;
+  border-radius:5px;
 
 }
 
-.navigation .login {
-  position: relative;
-  top: 50%;
-  transform: translateY(70%);
+header #login button:hover{
+  background-color:rgba(0,0,0,0.4);
 }
 
-.navigation button {
-  font-size: 20px;
-  background-color: white;
-  border: 0px solid;
+/*///////// form styling ///////// */
 
+div .formDiv {
+	border:2px solid gray;
+	border-radius:7px;
+	border-color:white;
+	background-color:rgba(0,0,0,0.3);
+	width:200px;
+	height:200px;
+}
+
+.formDiv input{
+	font: sans-serif;
+	color:white;
+	background-color:rgba(0,0,0,0.3);
+	border-color:white;
+	border-radius:5px;
+	padding:.5em;
+}
+
+.formDiv button{
+	font: sans-serif;
+	color:white;
+	background-color:rgba(0,0,0,0.3);
+	border-radius:5px;
+	padding:.5em;
 }
 
 /*remove this once the framework has been created*/
@@ -42,14 +73,24 @@ body {
   height: 50%;
 }
 
-.form {
+.formDiv button:hover{
+	background-color:rgba(0,0,0,0.8);
+	font:sans-serif;
+	color:rgba(255,255,255,0.8);
+}
+
+::-webkit-input-placeholder {
+    color:white;
 }
 
 .form [name = email] {
+	width:80%;
 }
 
 .form [name = name] {
+	width:80%;
 }
 
 .form [name = value] {
+	width:80%;
 }

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <link rel="stylesheet" type="text/css" href="/style.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.js"></script>
+    <script src="ngFx.js"></script>
     <script src="app.js"></script>
     <script src="services/routerService.js"></script>
     <script src="directives/d3Directive.js"></script>
@@ -14,14 +16,14 @@
     <script src="controllers/signupController.js"></script>
 
     <meta charset="UTF-8">
-    <title></title>
+    <title> ShowOff</title>
 </head>
 <body ng-app="myApp">
-<div ng-controller="d3Controller" id="d3logo">
-    <button ng-click="makeData();" name="Generate Dummy Data">Generate Dummy Data</button>
-    <bar-chart data="data"></bar-chart>
-</div>
-
-<div ng-view=""></div>
+  <header>
+    <div id="logo"> ShowOff </div>
+    <div id="login"><button type="button"> Log in</button>
+    </div>
+  </header>
+<div class="fx-fade-left-big fx-easing-circ fx-speed-1000" ng-view=""></div>
 </body>
 </html>
