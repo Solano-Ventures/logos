@@ -9,7 +9,8 @@ angular.module('myApp.directives', [])
       link: function (scope, element, attrs) {
         var vis = d3.select(element[0])
           .append('svg')
-          .style('width', '100%');
+          .style('width', '100%')
+          .style('height', '350px');
 
         scope.$watch('data', function (newValue) {
           vis.selectAll('*').remove();
@@ -31,8 +32,8 @@ angular.module('myApp.directives', [])
                 'x': 30,
                 'y': 30 * index,
                 'fill': 'red'
-              })
-          })
+              });
+          });
         });
       }
     };

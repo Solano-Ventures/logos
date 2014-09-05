@@ -16,6 +16,6 @@ angular.module('myApp', ['myApp.directives', 'ngRoute'])
         controller: 'SignupController'
       })
 
-      .otherwise({redirectTo:'/'})
+      .otherwise({redirectTo:'/'});
   });
 
