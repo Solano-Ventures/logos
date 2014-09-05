@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.js"></script>
     <script src="app.js"></script>
-    <script src="router.js"></script>
+    <script src="services/routerService.js"></script>
+    <script src="directives/d3Directive.js"></script>
+    <script src="controllers/d3Controller.js"></script>
+    <script src="controllers/formController.js"></script>
+    <script src="controllers/loginController.js"></script>
+    <script src="controllers/signupController.js"></script>
+
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body ng-app="myApp">
-<!-- <div class="navigation">
-    <form class="login form">
-        E-mail : <input type="text" name="email">
-        Password : <input type="text" name="password">
-        <button type="button">Login</button>
-    </form>
+<div ng-controller="d3Controller">
+    <button ng-click="makeData();" name="Generate Dummy Data">Generate Dummy Data</button>
+    <bar-chart data="data"></bar-chart>
+</div>
 
-    <br>
-    <br>
-</div> -->
 <div ng-view=""></div>
 </body>
 </html>
