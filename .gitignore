@@ -33,9 +33,11 @@ pids
 logs
 results
 
+###GITHUB###
 npm-degub.log
 node_modules
 bower_components
+_CONTRIBUTING.md
 
 ###Deployment###
 iisnode.yml
