@@ -46,8 +46,8 @@ angular.module('myApp.directives')
                 'fill-opacity' : 0
               })
               .transition()
-              .duration(4000)
-              .delay(function() { return Math.floor(Math.random() * 3000); })
+              .duration(2000)
+              .delay(function() { return Math.floor(Math.random() * 2000); })
               .attr('fill-opacity', function() {
                 return item.slice(-4, -1);
               });
