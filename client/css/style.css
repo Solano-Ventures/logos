@@ -59,6 +59,25 @@ footer a:focus {
   display: inline-block;
 }
 
+/*LOGO VIEW ELEMENTS*/
+
+.definedby {
+  font-size: 16px;
+  padding-top: 12px;
+}
+
+.creatorname {
+  font-size: 12px;
+  padding-top: 6px;
+}
+
+.creatorname,
+.definedby {
+  padding-left: 400px;
+  text-align: left;
+  background-color: RGBA(204, 204, 204, 1);
+}
+
 /*PAGE BUTTONS*/
 
 .loginbtn {
@@ -105,6 +124,7 @@ footer a:focus {
 /*remove this once the framework has been created*/
 #d3logo {
   width: 50%;
+  margin: 0 auto;
   height: 50%;
   max-width: 50%;
   max-height: 500px;
