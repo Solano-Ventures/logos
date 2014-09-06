@@ -3,7 +3,7 @@ angular.module('myApp.controllers')
     $scope.data = {};
     $scope.data.email = "";
     $scope.data.password = "";
-    $scope.loginSubmit = function(){
+    $scope.clickSubmit = function(){
       if($scope.data.email && $scope.data.password){
         console.log("Login Submit was fired!");
         RouterService.formPostTest($scope.data);

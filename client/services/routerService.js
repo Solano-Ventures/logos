@@ -6,7 +6,7 @@ angular.module('myApp.services')
     function formPost (formObj) {
       var request = $http({
         method: 'POST',
-        url: 'http://localhost:8000/logo',
+        url: '/logo',
         data: formObj
       });
 
@@ -22,7 +22,6 @@ angular.module('myApp.services')
 
     function getLogoFromStorage() {
       var logo = last(storage);
-      console.log(logo);
       return logo.logo;
     }
 
@@ -32,6 +31,7 @@ angular.module('myApp.services')
     }
 
     function postSignUp(user) {
+      console.log(user.email);
       var data = {
         email : user.email,
         password : user.password,
@@ -40,12 +40,11 @@ angular.module('myApp.services')
 
       var request = $http({
         method: 'POST',
-        url: 'http://localhost:8000/signup',
+        url: '/signup',
         data: data
       });
 
       $location.path('/account');
-      console.log(data);
     }
     // Waiting for Chris on the Server
     //   return request
