@@ -24,6 +24,10 @@ angular.module('myApp', [
         templateUrl: 'views/logoView.html',
         controller: 'd3Controller'
       })
+      .when('/account', {
+        templateUrl: 'views/accountView.html',
+        //controller : 'accountController'
+      })
       .otherwise({redirectTo:'/'});
   });
 

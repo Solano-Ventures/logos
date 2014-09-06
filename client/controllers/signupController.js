@@ -3,10 +3,10 @@ angular.module('myApp.controllers')
     $scope.data = {};
     $scope.data.email = "";
     $scope.data.password = "";
-    $scope.signupSubmit = function(){
+    $scope.clickSubmit = function(){
+      console.log('Click Submit Fired!');
       if($scope.data.email && $scope.data.password){
-        console.log("Signup Submit was fired!");
-        RouterService.formPostTest($scope.data);
+        RouterService.postSignUp($scope.data);
       } else {
         console.log("needs all inputs");
       }

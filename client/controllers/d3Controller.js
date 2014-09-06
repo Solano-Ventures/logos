@@ -3,7 +3,10 @@ angular.module('myApp.controllers')
     $scope.data = {};
     $scope.data.logos = [];
     $scope.getLogo = function() {
-        $scope.data.logos = RouterService.getLogo();
+        $scope.data.logos = RouterService.getLogoFromStorage();
+    };
+    $scope.getSignUp = function() {
+      RouterService.getSignUpPage({logo: $scope.data.logos});
     };
     $scope.getLogo();
   });
