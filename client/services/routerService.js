@@ -4,6 +4,7 @@ angular.module('myApp.services')
 
     //public methods
     function formPost (formObj) {
+      // console.log('here is ', formObj);
       var request = $http({
         method: 'POST',
         url: '/logo',
@@ -22,7 +23,7 @@ angular.module('myApp.services')
 
     function getLogoFromStorage() {
       var logo = last(storage);
-      console.log(logo);
+      // console.log(logo);
       return logo.logo;
     }
 
