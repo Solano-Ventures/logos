@@ -1,69 +1,21 @@
-*, *:before, *:after {
-  box-sizing: border-box;
+.fill {
+  height: 6px;
+  background-color: #1ABC9C;
 }
 
-header h2 {
-  font-size: 28px;
-  text-align: center;
-  color: cornsilk;
-}
-
-nav.menu {
-  background: coral;
-  position: relative;
-  min-height: 45px;
-  height: 100%;
-}
-
-.menu > ul > li {
-  list-style: none;
+#logo {
+  font-size: 48px;
+  padding-left: 8px;
+  padding-top: 24px;
   display: inline-block;
-  color: #fff;
-  line-height: 45px;
-  
-}
-.menu > ul li a {
-  text-decoration: none;
-  color: #fff;
-  display:block;
-  padding: 0px 24px;
-}
-.menu > ul li a:hover {
-  background:#444;
-  color: #fff;
-  transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -webkit-transition-duration: 0.3s;
-}
-.active{
-  background:#444 !important;
 }
 
-.loginbtn{
+.loginbtn {
   float: right;
-  background-color: #16A085;
-  border:none;
-  color:white;
-  outline: none;
-  font-size: 17px;
-  text-transform: uppercase;
-  -webkit-transition: 0.7s;
-  -moz-transition: 0.7s;
-  -ms-transition: 0.7s;
-  -o-transition: 0.7s;
-  transition: 0.7s;
+  display: inline-block;
 }
 
-.loginbtn:hover{
-  background-color: #f1efec;
-  color:#1ABC9C;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
-}
-
+.loginbtn,
 .signupbtn,
 .submitbtn,
 .createbtn{
@@ -85,6 +37,7 @@ nav.menu {
    transition: 0.7s;
 }
 
+.loginbtn:hover,
 .signupbtn:hover, 
 .submitbtn:hover, 
 .createbtn:hover{
@@ -98,8 +51,9 @@ nav.menu {
       transition: 1s;
 }
 
-footer {
-  color: cornsilk; 
+footer div {
+  height: 30px;
+  background-color: RGBA(123,123,123); 
 }
 
 /*remove this once the framework has been created*/

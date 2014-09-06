@@ -24,19 +24,19 @@
     <script src="controllers/loginController.js"></script>
     <script src="controllers/signupController.js"></script>
     <meta charset="UTF-8">
-    <title> logos</title>
+    <title>logos</title>
 </head>
 <body ng-app="myApp">
-  <header class="container">
-    <nav class="menu">
-      <ul>
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Team</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li id="login" class="loginbtn"><a href="#">Login</a></li>
-      </ul>
-    </nav>
-    <div id="logo"> logos </div>
+  <header>
+    <div class="container">
+      <div class="fill sixteen columns"></div>
+      <div class=".offset-by-twelve"></div>
+      <div class="fill three columns"></div>
+    </div>
+    <div class="container">
+      <div id="logo"> logos </div>
+      <button type="button" class="loginbtn" ng-click="clickSubmit()">Login</button>
+    </div>
   </header>
 
   <div class="content container">
@@ -44,11 +44,7 @@
   </div>
   
   <footer class="container">
-    <nav class="menu">
-      <ul>
-        <li style="float:right"><a href="#">Solana Ventures</a></li>
-      </ul>
-    </nav>
+    <div style="float:right"><a href="#">Solana Ventures</a></div>
   </footer>
 
 </body>
