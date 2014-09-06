@@ -24,7 +24,7 @@ exports.sendData = function(req, res) {
 exports.signup = function(req, res) {
   var email = req.body.email;
   var password = req.body.password;
-  // var create;
+  var logo = req.body.logo.logo;
   var newUser;
 
   // User.findOne({email: email})
@@ -40,8 +40,8 @@ exports.signup = function(req, res) {
   //       User.create( newUser );
   //     }
   //   })
-  newUser = {email: email, password: password};
-  res.send('gotems');
+  newUser = {email: email, password: password, logos: logo};
+  res.send('Saved in DB!');
   return User.create( newUser );
 };
 
