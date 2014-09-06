@@ -4,6 +4,7 @@ angular.module('myApp.services')
 
     //public methods
     function formPost (formObj) {
+      // console.log('here is ', formObj);
       var request = $http({
         method: 'POST',
         url: '/logo',
@@ -17,12 +18,30 @@ angular.module('myApp.services')
     }
 
     function getLogoPage() {
-        $location.path('/logo');
+      $location.path('/logo');
     }
 
     function getLogoFromStorage() {
       var logo = last(storage);
+      // console.log(logo);
       return logo.logo;
+
+    //signup/login request
+    function authPost (signupForm) {
+      var email = signupForm.email;
+      var password = signupForm.password;
+
+      var request = $http({
+        method: 'POST',
+        url: 'http://localhost:8000/signup',
+        data: {
+          email: email,
+          password: password
+        }
+      });
+
+      return (request.then(handleSuccess, handleError));
+
     }
 
     function getSignUpPage(logo) {
@@ -31,28 +50,22 @@ angular.module('myApp.services')
     }
 
     function postSignUp(user) {
-      console.log(user.email);
       var data = {
         email : user.email,
         password : user.password,
         logo: last(storage)
       };
-
+      console.log(data.logo)
       var request = $http({
         method: 'POST',
         url: '/signup',
         data: data
-      });
-
-      $location.path('/account');
+      })
+      .then(function(response) {
+        console.log('Server response = ' + response.data);
+        $location.path('/account')
+      }, handleError);
     }
-    // Waiting for Chris on the Server
-    //   return request
-    //   .then(function(response) {
-    //     console.log(response);
-    //     $location.path('/account')
-    //   }, handleError);
-    // }
     //
     //private methods
 
