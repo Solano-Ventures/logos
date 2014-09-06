@@ -1,14 +1,14 @@
-angular.module('myApp')
+angular.module('myApp.controllers')
   .controller('SignupController', function ($scope, $q, RouterService) {
-    $scope.signupForm = {};
-    $scope.signupForm.email = "";
-    $scope.signupForm.password = "";
+    $scope.data = {};
+    $scope.data.email = "";
+    $scope.data.password = "";
     $scope.signupSubmit = function(){
-      if($scope.signupForm.email && $scope.signupForm.password){
-        console.log("Signup Submit was fired!")
-        RouterService.formPostTest($scope.signupForm)
+      if($scope.data.email && $scope.data.password){
+        console.log("Signup Submit was fired!");
+        RouterService.formPostTest($scope.data);
       } else {
-        console.log("needs all inputs")
+        console.log("needs all inputs");
       }
-    }
+    };
   });
