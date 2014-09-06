@@ -1,14 +1,10 @@
 <div ng-class="login" class ="form">
-  <table class="formDiv">
-    <tr>
-      <td align="left"><input type="email" name="email" placeholder="E-mail" ng-model="data.email"></td>
-    </tr>
-    <tr>
-      <td align="left"><input type="password" name="name" placeholder="Password" ng-model="data.password"></td>
-    </tr>
-    <tr>
-      <td align="left"><button type="button" ng-click="clickSubmit()">Submit</button></td>
-    </tr>
-  </table>
+  <div>
+    <form>
+      <input type="email" name="email" placeholder="E-mail" ng-model="data.email">
+      <input type="password" name="name" placeholder="Password" ng-model="data.password">
+      <button type="button" class="submitbtn" ng-click="clickSubmit()">Submit</button>
+    </form>
+  </div>
 </div>
 
