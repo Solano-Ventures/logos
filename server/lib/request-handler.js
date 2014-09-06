@@ -41,6 +41,13 @@ exports.signup = function(req, res) {
   //     }
   //   })
   newUser = {email: email, password: password};
+  res.send('gotems');
   return User.create( newUser );
 };
+
+exports.login = function(req, res) {
+  var email = req.body.email;
+  var password = req.body.password;
+  console.log(email, password);
+}
 
