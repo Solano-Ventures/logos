@@ -12,27 +12,49 @@ angular.module('myApp.services')
 
       return (request.then(function(response) {
         storage.push(response.data);
-        logoGet();
+        getLogoPage();
       }, handleError));
     }
 
-    function logoGet() {
-      var request = $http({
-        method: 'GET',
-        url: 'http://localhost:8000/signup'
-      });
-
-      request.then(function(response) {
+    function getLogoPage() {
         $location.path('/logo');
-      });
     }
 
-    function getLogo() {
+    function getLogoFromStorage() {
       var logo = storage.pop();
       console.log(logo);
       return logo.logo;
     }
 
+    function getSignUpPage(logo) {
+      storage.push(logo);
+      $location.path('/signup');
+    }
+
+    function postSignUp(user) {
+      var data = {
+        email : user.email,
+        password : user.password,
+        logo: storage.pop()
+      };
+
+      var request = $http({
+        method: 'POST',
+        url: 'http://localhost:8000/signup',
+        data: data
+      });
+
+      $location.path('/account');
+      console.log(data);
+    }
+    // Waiting for Chris on the Server
+    //   return request
+    //   .then(function(response) {
+    //     console.log(response);
+    //     $location.path('/account')
+    //   }, handleError);
+    // }
+    //
     //private methods
 
     function handleError(response) {
@@ -47,10 +69,11 @@ angular.module('myApp.services')
       return response.data;
     }
 
-
     return({
       formPost: formPost,
-      getLogo : getLogo,
-      logoGet : logoGet
+      getLogoPage : getLogoPage,
+      getLogoFromStorage : getLogoFromStorage,
+      getSignUpPage: getSignUpPage,
+      postSignUp: postSignUp
     });
   });

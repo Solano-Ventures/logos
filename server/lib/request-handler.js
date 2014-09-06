@@ -8,10 +8,6 @@ exports.redirToIndex = function(req, res) {
   res.redirect('/');
 };
 
-exports.redirToLogo = function(req, res) {
-  res.redirect('/signup')
-};
-
 exports.sendData = function(req, res) {
 	var firstName = req.body.firstname;
 	var lastName = req.body.lastName;
