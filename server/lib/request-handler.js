@@ -1,4 +1,6 @@
 var generateLogo = require( '../app/logogen' );
+var mongoose = require('mongoose');
+var User = require('../app/models/user');
 
 exports.renderIndex = function(req, res) {
   res.status(200).send('Sent to Home Page');
@@ -19,5 +21,32 @@ exports.sendData = function(req, res) {
   res.status(201).send(jsonLogo);
 };
 
-// test post request in terminal using the following command:
-// curl -H "Content-Type: application/json" -d '{"firstname":"Chris","lastname":"greatest","definedby":"cash money","color":"RGBA(123,123,123,1.0)"}' localhost:8000/logo
+exports.signup = function(req, res) {
+  var email = req.body.email;
+  var password = req.body.password;
+  var logo = req.body.logo.logo;
+  var newUser;
+
+  // User.findOne({email: email})
+  //   .then(function(email){
+  //     if(email){
+  //       console.log('email already exists!');
+  //       next();
+  //     } else {
+  //       newUser = {
+  //         email: email,
+  //         password: password
+  //       }
+  //       User.create( newUser );
+  //     }
+  //   })
+  newUser = {email: email, password: password, logos: logo};
+  res.send('Saved in DB!');
+  return User.create( newUser );
+};
+
+exports.login = function(req, res) {
+  var email = req.body.email;
+  var password = req.body.password;
+  console.log(email, password);
+}
