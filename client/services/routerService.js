@@ -31,6 +31,7 @@ angular.module('myApp.services')
     }
 
     function postSignUp(user) {
+      console.log(user.email);
       var data = {
         email : user.email,
         password : user.password,

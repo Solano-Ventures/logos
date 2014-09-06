@@ -17,7 +17,7 @@ angular.module('myApp', [
         controller: 'LoginController'
       })
       .when('/signup',{
-        templateUrl: 'views/loginview.html',
+        templateUrl: 'views/loginView.html',
         controller: 'SignupController'
       })
       .when('/logo', {
