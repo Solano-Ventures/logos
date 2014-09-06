@@ -2,13 +2,11 @@ angular.module('myApp.services')
   .service('RouterService', function ($http, $q, $location) {
     var storage = [];
 
-    var currentURL = $location.absUrl() - $location.url() || 'http://localhost:8000';
-
     //public methods
     function formPost (formObj) {
       var request = $http({
         method: 'POST',
-        url: currentURL + '/logo',
+        url: '/logo',
         data: formObj
       });
 
@@ -41,12 +39,11 @@ angular.module('myApp.services')
 
       var request = $http({
         method: 'POST',
-        url: currentURL + '/signup',
+        url: '/signup',
         data: data
       });
 
       $location.path('/account');
-      console.log(data);
     }
     // Waiting for Chris on the Server
     //   return request
