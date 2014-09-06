@@ -17,11 +17,12 @@ angular.module('myApp.services')
     }
 
     function getLogoPage() {
-        $location.path('/logo');
+      $location.path('/logo');
     }
 
     function getLogoFromStorage() {
       var logo = last(storage);
+      console.log(logo);
       return logo.logo;
     }
 
@@ -31,28 +32,22 @@ angular.module('myApp.services')
     }
 
     function postSignUp(user) {
-      console.log(user.email);
       var data = {
         email : user.email,
         password : user.password,
         logo: last(storage)
       };
-
+      console.log(data.logo)
       var request = $http({
         method: 'POST',
         url: '/signup',
         data: data
-      });
-
-      $location.path('/account');
+      })
+      .then(function(response) {
+        console.log('Server response = ' + response.data);
+        $location.path('/account')
+      }, handleError);
     }
-    // Waiting for Chris on the Server
-    //   return request
-    //   .then(function(response) {
-    //     console.log(response);
-    //     $location.path('/account')
-    //   }, handleError);
-    // }
     //
     //private methods
 
