@@ -2,11 +2,13 @@ angular.module('myApp.services')
   .service('RouterService', function ($http, $q, $location) {
     var storage = [];
 
+    var currentURL = $location.absUrl() - $location.url() || 'http://localhost:8000';
+
     //public methods
     function formPost (formObj) {
       var request = $http({
         method: 'POST',
-        url: 'http://localhost:8000/logo',
+        url: currentURL + '/logo',
         data: formObj
       });
 
@@ -22,7 +24,6 @@ angular.module('myApp.services')
 
     function getLogoFromStorage() {
       var logo = last(storage);
-      console.log(logo);
       return logo.logo;
     }
 
@@ -40,7 +41,7 @@ angular.module('myApp.services')
 
       var request = $http({
         method: 'POST',
-        url: 'http://localhost:8000/signup',
+        url: currentURL + '/signup',
         data: data
       });
 
