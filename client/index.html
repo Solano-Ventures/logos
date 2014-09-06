@@ -2,7 +2,16 @@
 <html>
 <head lang="en">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>logos</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
     <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular-route.js"></script>
@@ -15,14 +24,32 @@
     <script src="controllers/loginController.js"></script>
     <script src="controllers/signupController.js"></script>
     <meta charset="UTF-8">
-    <title> ShowOff</title>
+    <title> logos</title>
 </head>
 <body ng-app="myApp">
-  <header>
-    <div id="logo"> ShowOff </div>
-    <div id="login"><button type="button"> Log in</button>
-    </div>
+  <header class="container">
+    <nav class="menu">
+      <ul>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li id="login" class="loginbtn"><a href="#">Login</a></li>
+      </ul>
+    </nav>
+    <div id="logo"> logos </div>
   </header>
-<div class="fx-fade-left-big fx-easing-circ fx-speed-1000" ng-view=""></div>
+
+  <div class="content container">
+      <div class="fx-fade-left-big fx-easing-circ fx-speed-1000" ng-view=""></div>
+  </div>
+  
+  <footer class="container">
+    <nav class="menu">
+      <ul>
+        <li style="float:right"><a href="#">Solana Ventures</a></li>
+      </ul>
+    </nav>
+  </footer>
+
 </body>
 </html>
