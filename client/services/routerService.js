@@ -21,7 +21,7 @@ angular.module('myApp.services')
     }
 
     function getLogoFromStorage() {
-      var logo = storage.pop();
+      var logo = last(storage);
       console.log(logo);
       return logo.logo;
     }
@@ -35,7 +35,7 @@ angular.module('myApp.services')
       var data = {
         email : user.email,
         password : user.password,
-        logo: storage.pop()
+        logo: last(storage)
       };
 
       var request = $http({
@@ -57,6 +57,7 @@ angular.module('myApp.services')
     //
     //private methods
 
+
     function handleError(response) {
       if ( ! angular.isObject(response.data) || ! response.data.message ) {
         return $q.reject('An unknown error occurred.');
@@ -67,6 +68,10 @@ angular.module('myApp.services')
 
     function handleSuccess(response) {
       return response.data;
+    }
+
+    function last (array) {
+      return array[array.length-1];
     }
 
     return({
