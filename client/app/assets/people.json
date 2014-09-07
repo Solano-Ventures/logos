@@ -1,0 +1,76 @@
+{
+  "people":
+  [
+    {
+    "name" : "Carlos",
+    "value" : "My wife",
+    "img" : "./app/assets/people/Carlos and Winnona.jpg"
+    },
+    {
+      "name" : "Chris",
+      "value" : "liberty",
+      "img" : "./app/assets/people/Chris.jpg"
+    },
+    {
+      "name" : "Christine",
+      "value" : "the outdoors!",
+      "img" : "./app/assets/people/Chrstine.jpg"
+    },
+    {
+      "name" : "Emily",
+      "value" : "A good book and a sunny day...",
+      "img" : "./app/assets/people/Emily.jpg"
+    },
+     {
+      "name" : "Freddie",
+      "value" : "Traveling the world",
+      "img" : "./app/assets/people/Freddie.jpg"
+    },
+     {
+      "name" : "James",
+      "value" : "Adventure",
+      "img" : "./app/assets/people/James.jpg"
+    },
+     {
+      "name" : "Jessica",
+      "value" : "City life",
+      "img" : "./app/assets/people/Jessica.jpg"
+    },
+     {
+      "name" : "Jonathan",
+      "value" : "Dairy Products!",
+      "img" : "./app/assets/people/Jonathan.jpg"
+    },
+     {
+      "name" : "Lindsay",
+      "value" : "I love camping!!",
+      "img" : "./app/assets/people/Lindsay.jpg"
+    },
+     {
+      "name" : "Christopher",
+      "value" : "Learning to program",
+      "img" : "./app/assets/people/mccloud.jpeg"
+    },
+     {
+      "name" : "Rick",
+      "value" : "Rico Wolf ya'll",
+      "img" : "./app/assets/people/Rick.jpg"
+    },
+     {
+      "name" : "Sarah",
+      "value" : "Bringing the boys to the yard...",
+      "img" : "./app/assets/people/Sarah.jpg"
+    },
+     {
+      "name" : "Will",
+      "value" : "I am dangerous!",
+      "img" : "./app/assets/people/Will.jpg"
+    },
+     {
+      "name" : "Winston",
+      "value" : "This is silly...",
+      "img" : "./app/assets/people/Winston.jpg"
+    }
+  ]
+}
+

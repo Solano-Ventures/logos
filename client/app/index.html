@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="LogosMain">
+<head lang="en">
+  <meta charset="utf-8">
+  <title>lógos</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" type="text/css" href="app.css">
+  <link rel="stylesheet" type="text/css" href="css/skeletonbase.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+  <script src="ct-ui-router-extras.js"></script>
+  <script src="app.js"></script>
+  <script src="app.controllers.js"></script>
+  <script src="app.directives.js"></script>
+  <script src="app.services.js"></script>
+  <title ng-bind="$state.current.name"></title>
+  </head>
+  <body ng-controller="MainController">
+    <div id="nav-bar" class="overlay">
+      <button class='login' ng-hide="storage.user">Login</button>
+    </div>
+    <section ui-view="feed"></section>
+    <div class="create">
+      <section class="create" ui-view="create"></section>
+    </div>
+  </body>
+</html>

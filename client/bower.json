@@ -1,13 +1,9 @@
 {
-  "name": "GraciousUnicornsClientBuild",
-  "version": "1.0.0",
-  "description": "initial client-side development environment",
-  "main": "client/app.js",
-  "authors": [
-    "'christopher mccloud",
-    "jon sadka",
-    "jonathan ng",
-    "christopher singhavong'"
+  "name": "LogosRebuild",
+  "version": "0.0.0",
+  "main": "app/app.js",
+  "moduleType": [
+    "node"
   ],
   "license": "MIT",
   "private": true,

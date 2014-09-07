@@ -11,10 +11,11 @@ exports.redirToIndex = function(req, res) {
 };
 
 exports.sendData = function(req, res) {
-  var firstName = req.body.firstname;
-  var lastName = req.body.lastName;
-  var definedBy = req.body.definedby;
-  var color = req.body.color;
+	var firstName = req.body.firstname;
+	var lastName = req.body.lastName;
+	var definedBy = req.body.definedby;
+	var color = req.body.color;
+
   var logo = { logo: generateLogo.logoGen(firstName, lastName, definedBy, color) };
   var jsonLogo = JSON.stringify(logo);
   res.status(201).send(jsonLogo);
