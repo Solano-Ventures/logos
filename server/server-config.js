@@ -16,6 +16,6 @@ app.get( '/*', handler.redirToIndex );
 
 app.post( '/signup', handler.signup );
 app.post( '/login' , handler.login );
-
+app.post( '/addlogo', handler.addlogo );
 app.post( '/logo', handler.sendData );
 module.exports = app;

@@ -49,3 +49,25 @@ exports.getAccountData = function(req, res){
     res.status(201).send(userData);
   });
 };
+
+exports.addlogo = function(req, res){
+  console.log(req.body);
+  var newLogo = generateLogo.logoGen(req.body.firstName, req.body.lastName, req.body.definedBy, req.body.color);
+  var userlogo = {
+    firstname: req.body.firstName,
+    lastname: req.body.lastName,
+    definedBy: req.body.definedBy,
+    color: req.body.color,
+    generatedlogo: newLogo
+  };
+
+  User.findOneAndUpdate(
+    { email:req.body.email },
+    {$push: {logos: userlogo}},
+    {safe: true, upsert: true},
+    function(err, model){
+      console.log(err);
+      res.status(201).send(model);
+    }
+  );
+};
