@@ -2,11 +2,13 @@ angular.module('myApp.services')
   .service('RouterService', function ($http, $q, $location) {
     var storage = [];
     var userStore = [];
-
+    var userCache = {
+      logo : []
+    };
 
     //public methods
     function formPost (formObj) {
-      userStore.push(formObj);
+      angular.extend(userCache, formObj);
       var request = $http({
         method: 'POST',
         url: '/logo',
@@ -14,7 +16,7 @@ angular.module('myApp.services')
       });
 
       return (request.then(function(response) {
-        storage.push(response.data);
+        userCache.logo.push(response.data);
         getLogoPage();
       }, handleError));
     }
@@ -24,10 +26,9 @@ angular.module('myApp.services')
     }
 
     function getLogoFromStorage() {
-      var logo = last(storage);
-      return logo.logo;
+      var logo = last(userCache.logo);
+      return logo;
     }
-
 
     function getSignUpPage(logo) {
       storage.push(logo);
@@ -35,26 +36,31 @@ angular.module('myApp.services')
     }
 
     function postSignUp(user) {
-      var storedUser = last(userStore);
-      var data = {
-        email : user.email,
-        password : user.password,
-        firstName: storedUser.firstName,
-        lastName: storedUser.lastName,
-        definedBy: storedUser.definedBy,
-        color: storedUser.color,
-        logo: last(storage)
-      };
-      console.log(data);
       var request = $http({
         method: 'POST',
         url: '/signup',
-        data: data
+        data: userCache
       })
       .then(function(response) {
-        console.log('Server response = ' + response.data);
-        $location.path('/account');
+        getAccount();
       }, handleError);
+    }
+
+    function getAccount() {
+      $http({
+        method: 'GET',
+        url: '/account',
+        data: userCache.logo
+      })
+      .then(function(response) {
+        console.log('userCache = ' + userCache);
+        console.log('Server Response = ' + response);
+        $location.path('/account');
+      });
+    }
+
+    function showUserPage() {
+      return userCache;
     }
     //
     //private methods
@@ -81,7 +87,9 @@ angular.module('myApp.services')
       getLogoPage : getLogoPage,
       getLogoFromStorage : getLogoFromStorage,
       getSignUpPage: getSignUpPage,
-      postSignUp: postSignUp
+      postSignUp: postSignUp,
+      getAccount: getAccount,
+      showUserPage: showUserPage
     });
   }
 );

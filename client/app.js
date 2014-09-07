@@ -26,7 +26,7 @@ angular.module('myApp', [
       })
       .when('/account', {
         templateUrl: 'views/accountView.html',
-        //controller : 'accountController'
+        controller : 'AccountController'
       })
       .otherwise({redirectTo:'/'});
   });

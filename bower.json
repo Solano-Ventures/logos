@@ -23,6 +23,7 @@
     "angular-route": "~1.2.23",
     "d3": "~3.4.11",
     "underscore": "~1.7.0",
-    "ngFx": "~1.0.4"
+    "ngFx": "~1.0.4",
+    "ui-router-extras": "~0.0.10"
   }
 }

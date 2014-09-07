@@ -1,12 +1,12 @@
 angular.module('myApp.controllers')
   .controller('d3Controller', function($scope, RouterService) {
     $scope.data = {};
-    $scope.data.logos = [];
+    $scope.data.logo = [];
     $scope.getLogo = function() {
-        $scope.data.logos = RouterService.getLogoFromStorage();
+        $scope.data.logo = RouterService.getLogoFromStorage();
     };
     $scope.getSignUp = function() {
-      RouterService.getSignUpPage({logo: $scope.data.logos});
+      RouterService.getSignUpPage({logo: $scope.data.logo});
     };
     $scope.getLogo();
   });
