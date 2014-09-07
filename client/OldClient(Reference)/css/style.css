@@ -1,0 +1,131 @@
+/*HEADER AND FOOTER*/
+body {
+  background-image: url('../images/paper_fibers.png');
+}
+.banner {
+  height: 8px;
+  background-color: RGBA(255, 75, 92, 1);
+}
+
+#logosname,
+#logosname a {
+  font-size: 48px;
+  display: inline-block;
+  color: RGBA(204, 204, 204, 1);
+  text-decoration: none;
+  line-height: normal;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
+}
+
+#logosname a:hover,
+#logosname a:focus {
+  color: RGBA(0, 0, 0, 1);
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+.content {
+  min-height: 700px;
+}
+
+footer div {
+  background-color: RGBA(204, 204, 204, 1);
+  text-align: right;
+}
+
+footer a,
+footer a:hover,
+footer a:focus {
+  padding-right: 6px;
+  color: #fff;
+  text-decoration: none;
+  line-height: inherit;
+}
+
+/*LANDING VIEW ELEMENTS*/
+
+.landingcarousel {
+}
+
+.landing {
+  vertical-align: top;
+  width: 300px;
+  display: inline-block;
+}
+
+/*LOGO VIEW ELEMENTS*/
+
+.definedby {
+  font-size: 16px;
+  padding-top: 12px;
+}
+
+.creatorname {
+  font-size: 12px;
+  padding-top: 6px;
+}
+
+.creatorname,
+.definedby {
+  padding-left: 400px;
+  text-align: left;
+}
+
+/*PAGE BUTTONS*/
+
+.loginbtn {
+  float: right;
+}
+
+.loginbtn,
+.signupbtn,
+.submitbtn,
+.createbtn{
+  display: inline-block;
+  width: 160px;
+  height: 54px;
+  border:3px solid RGBA(255, 75, 92, 1);
+  background-color: transparent;
+  outline: none;
+  font-size: 18px;
+  color:RGBA(255, 75, 92, 1);
+  font-family: 'Montserrat', sans-serif;
+  /*margin-top: 10px;*/
+  /*margin-right: 20px;*/
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
+}
+
+.loginbtn:hover,
+.signupbtn:hover,
+.submitbtn:hover,
+.createbtn:hover{
+  background-color: RGBA(255, 75, 92, 1);
+  border:none;
+  color:white;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+
+
+/*remove this once the framework has been created*/
+#d3logo {
+  width: 50%;
+  margin: 0 auto;
+  height: 50%;
+  max-width: 50%;
+  max-height: 500px;
+}
