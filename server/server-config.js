@@ -10,7 +10,9 @@ app.use( bodyParser.urlencoded({ extended: true }) );
 app.use( bodyParser.json() );
 
 app.get( '/', handler.renderIndex );
+app.get( '/account', handler.getAccountData );
 app.get( '/*', handler.redirToIndex );
+
 
 app.post( '/signup', handler.signup );
 app.post( '/login' , handler.login );

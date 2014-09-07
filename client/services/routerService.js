@@ -41,6 +41,7 @@ angular.module('myApp.services')
         firstName: storedUser.firstName,
         lastName: storedUser.lastName,
         definedBy: storedUser.definedBy,
+        color: storedUser.color,
         logo: last(storage)
       };
       console.log(data);
