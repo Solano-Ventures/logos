@@ -51,13 +51,52 @@ footer a:focus {
 
 .landingcarousel {
   background-color: #fff;
+  margin-right:8%;
 }
 
 .landing {
   vertical-align: top;
   width: 300px;
   display: inline-block;
+  margin-left:auto;
+  margin-right:auto;
 }
+
+.image-box {
+  width:200px;
+  height:200px;
+  overflow:auto;
+  background-color:white;
+  border:1px solid #ccc;
+  margin:0 2px 2px 0;
+  float:right;
+  font:normal normal 12px/1.4 Segoe,"Segoe UI",Arial,Sans-Serif;
+  color:#333;
+}
+
+.image-container,
+.image-details {
+  height:200px;
+  padding:5px 5px;
+  transition: margin-top .4s ease-in-out .4s;
+}
+
+.image-box:hover .image-container {margin-top:-200px}
+.image-box{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+div.ng-scope{
+  text-align: center;
+}
+
+div.ng-scope input{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
 
 /*LOGO VIEW ELEMENTS*/
 
