@@ -1,10 +1,11 @@
 angular.module('myApp.services')
   .service('RouterService', function ($http, $q, $location) {
     var storage = [];
+    var userStore = [];
 
     //public methods
     function formPost (formObj) {
-      // console.log('here is ', formObj);
+      userStore.push(formObj);
       var request = $http({
         method: 'POST',
         url: '/logo',
@@ -23,26 +24,9 @@ angular.module('myApp.services')
 
     function getLogoFromStorage() {
       var logo = last(storage);
-      // console.log(logo);
       return logo.logo;
-
-    //signup/login request
-    function authPost (signupForm) {
-      var email = signupForm.email;
-      var password = signupForm.password;
-
-      var request = $http({
-        method: 'POST',
-        url: 'http://localhost:8000/signup',
-        data: {
-          email: email,
-          password: password
-        }
-      });
-
-      return (request.then(handleSuccess, handleError));
-
     }
+
 
     function getSignUpPage(logo) {
       storage.push(logo);
@@ -50,12 +34,16 @@ angular.module('myApp.services')
     }
 
     function postSignUp(user) {
+      var storedUser = last(userStore);
       var data = {
         email : user.email,
         password : user.password,
+        firstName: storedUser.firstName,
+        lastName: storedUser.lastName,
+        definedBy: storedUser.definedBy,
         logo: last(storage)
       };
-      console.log(data.logo)
+      console.log(data);
       var request = $http({
         method: 'POST',
         url: '/signup',
@@ -63,7 +51,7 @@ angular.module('myApp.services')
       })
       .then(function(response) {
         console.log('Server response = ' + response.data);
-        $location.path('/account')
+        $location.path('/account');
       }, handleError);
     }
     //
@@ -93,4 +81,5 @@ angular.module('myApp.services')
       getSignUpPage: getSignUpPage,
       postSignUp: postSignUp
     });
-  });
+  }
+);
