@@ -24,23 +24,16 @@ exports.sendData = function(req, res) {
 exports.signup = function(req, res) {
   var email = req.body.email;
   var password = req.body.password;
-  var logo = req.body.logo.logo;
+  var userlogo = {
+    firstname: req.body.firstName,
+    lastname: req.body.lastName,
+    definedBy: req.body.definedBy,
+    color: req.body.color,
+    generatedlogo: req.body.logo.logo
+  };
   var newUser;
-
-  // User.findOne({email: email})
-  //   .then(function(email){
-  //     if(email){
-  //       console.log('email already exists!');
-  //       next();
-  //     } else {
-  //       newUser = {
-  //         email: email,
-  //         password: password
-  //       }
-  //       User.create( newUser );
-  //     }
-  //   })
-  newUser = {email: email, password: password, logos: logo};
+  newUser = {email: email, password: password, logos: [ userlogo ] };
+  console.log(newUser);
   res.send('Saved in DB!');
   return User.create( newUser );
 };
@@ -49,4 +42,10 @@ exports.login = function(req, res) {
   var email = req.body.email;
   var password = req.body.password;
   console.log(email, password);
-}
+};
+
+exports.getAccountData = function(req, res){
+  User.find({ email:req.body.email }, 'logos', function(err, userData){
+    res.status(201).send(userData);
+  });
+};
