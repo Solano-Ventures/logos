@@ -4,8 +4,21 @@ angular.module('LogosMain.services', [])
     //Public API
     return {
       postLogos: postLogos,
-      getPublicFeed: getPublicFeed
+      getPublicFeed: getPublicFeed,
+      signUp : signUp
     };
+
+    function signUp(user) {
+      $http({
+        method : 'POST',
+        url : '/signup',
+        data : user
+      })
+      .then(
+        function(value) { return value; },
+        function(reason) { return reason; }
+        );
+    }
 
     function postLogos(userLogos) {
       /*userLogos = {
