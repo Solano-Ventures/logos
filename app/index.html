@@ -24,10 +24,11 @@
       <span id="logosname"><a href="#">logós</a></span>
       <button class="loginbtn" ng-hide="storage.user">Login</button>
     </div>
+
+    <div id="descriptionbar">Generate your own logo..!!</div>
+    
     <section ui-view=""></section>
-    <div class="create">
-      <section class="create" ui-view="create"></section>
-    </div>
+    
     <div class='create' ng-controller="CreateController">
       <div> What are you about?</div>
       <input placeholder="first name" class='input' ng-model="storage.userLogos.firstName">
