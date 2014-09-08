@@ -110,6 +110,13 @@ angular.module('LogosMain.controllers', [])
         }, Math.random() * 8000 + 6000);
       }, 3000);
     };
+    $scope.hexToRgb = function(hex) {
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        console.log(hex, result);
+        return result ? 'RGBA(' + parseInt(result[1], 16) + ',' +
+                                  parseInt(result[2], 16) + ',' +
+                                  parseInt(result[3], 16) + ',1.0)' : null;
+    };
     $scope.signUp = function() {
       var data = {};
       data.logo = {};
@@ -117,7 +124,7 @@ angular.module('LogosMain.controllers', [])
       data.firstName = $scope.storage.userLogos.firstName;
       data.lastName = $scope.storage.userLogos.lastName;
       data.definedBy = $scope.storage.userLogos.definedBy;
-      data.color = $scope.storage.userLogos.color;
+      data.color = $scope.hexToRgb($scope.storage.userLogos.color);
       data.email = $scope.email;
       data.password = $scope.password;
       $http({
@@ -129,7 +136,8 @@ angular.module('LogosMain.controllers', [])
         function(value) {
           console.log('signup' + value);
           console.log('signup' + value.data);
-          $scope.storage.loginData = value.data;
+          $scope.storage.loginData = value;
+          $state.transitionTo('account');
            },
         function(reason) { return reason; }
         );
