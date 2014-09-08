@@ -84,6 +84,7 @@ angular.module('LogosMain.controllers', [])
         data : $scope.storage.userLogos
       })
       .then(function(value) {
+        $scope.storage.user = true;
         $scope.storage.logoMap.push(value);
         $state.transitionTo('showLogo');
       });

@@ -26,8 +26,8 @@
     </div>
 
     <section ui-view=""></section>
-    
-    <div class='create' ng-controller="CreateController">
+
+    <div ng-hide="storage.user"class='create' ng-controller="CreateController">
       <div> What are you about?</div>
       <form class="box">
         <input placeholder="first name" class='input' ng-model="storage.userLogos.firstName">
