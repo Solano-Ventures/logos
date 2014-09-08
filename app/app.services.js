@@ -15,7 +15,9 @@ angular.module('LogosMain.services', [])
         data : user
       })
       .then(
-        function(value) { return value; },
+        function(value) {
+          console.log('signup' + value);
+          return value; },
         function(reason) { return reason; }
         );
     }
