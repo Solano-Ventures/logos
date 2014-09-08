@@ -3,17 +3,20 @@
 }
 
 body {
-  background-image: url('/assets/backgrounds/creampaper.png');
+  background-image: url('/assets/backgrounds/gray_jean.png');
 }
 
 #nav-bar {
   width: 100%;
   height: 100px;
-  background-color: RGBA(72, 161, 251, .8);
+  background-color: RGBA(72, 161, 251, .9);
 }
 
 .descriptionbar {
-
+  font-size:2em;
+  text-align: center;
+  padding-bottom: 20px;
+  background-color: RGBA(72, 161, 251, .9): 
 }
 
 #logosname,
@@ -30,23 +33,6 @@ body {
   -ms-transition: 0.7s;
   -o-transition: 0.7s;
   transition: 0.7s;
-}
-
-footer {
-  text-align: center;
-  font-size: 12px;
-}
-
-footer p {
-  background-color: white;
-  font-size: 18px;
-  margin: 0;
-}
-
-footer p a,
-footer p a:hover {
-  text-decoration: none;
-  color: RGBA(72, 161, 251, .8);
 }
 
 #logosname a:hover,
@@ -83,6 +69,9 @@ footer p a:hover {
   transition: 1s;
 }
 .logos:hover{
+}
+
+.logos .slide{
 }
 .pic {
   float:left;
@@ -160,19 +149,18 @@ footer p a:hover {
   display: inline-block;
   width: 160px;
   height: 54px;
-  background-color: RGBA(102, 173, 245, 1);
+  background-color: RGBA(72, 161, 251, 1);
   color: RGBA(255, 255, 255, 1);
   border: none;
   outline: none;
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
-  /*margin-top: 10px;*/
-  /*margin-right: 20px;*/
   -webkit-transition: 0.7s;
   -moz-transition: 0.7s;
   -ms-transition: 0.7s;
   -o-transition: 0.7s;
   transition: 0.7s;
+  margin-left: 45%;
 }
 
 .signupbtn:hover,
@@ -191,20 +179,50 @@ footer p a:hover {
 /*FORMS*/
 
 .box {
-  margin: 50px auto;
-  width:400px;
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 50px; 
+  width: 90%;
   height:400px;
 }
 input {
   appearance: none;
-  width:200px;
   height:50px;
   font-size:2em;
   background:transparent;
   border:none;
-  border-bottom:solid 4px #e6e8eb;
+  border-bottom:solid 4px RGBA(70, 76, 76, .2);
   text-align:center;
   transition: border-color 0.6s ease;
+}
+
+.inputfirst {
+  width:24%;
+}
+
+.inputlast {
+  width:24%;
+}
+
+.inputdefined {
+  width:48%;
+}
+
+.inputcolor{
+  padding-top: 20px;
+  width: 70%;
+  border-bottom: none;
+  height: 34px;
+}
+
+.inputcolor:focus {
+  border-bottom: none;
+}
+
+#inputscolordesc {
+  color: #464c4c;
+  font-size:2em;
+  margin-top: 20px;  
 }
 
 ::-webkit-input-placeholder {
@@ -219,8 +237,8 @@ input {
 
 
 input:focus {
-   outline:none;
-   border:none;
-  border-bottom:solid 4px #00AEEF;
+  outline:none;
+  border:none;
+  border-bottom:solid 4px RGBA(72, 161, 251, .9);
   transition: border-color 1s ease;
 }

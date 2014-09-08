@@ -28,14 +28,18 @@
     <section ui-view=""></section>
 
     <div ng-hide="storage.user"class='create' ng-controller="CreateController">
-      <div> What are you about?</div>
       <form class="box">
-        <input placeholder="first name" class='input' ng-model="storage.userLogos.firstName">
-        <input placeholder="last name" class='input' ng-model="storage.userLogos.lastName">
-        <input placeholder="defined by" class='input' ng-model="storage.userLogos.definedBy">
+        <div>
+          <input placeholder="enter first name" class='inputfirst' ng-model="storage.userLogos.firstName">
+          <input placeholder="enter last name" class='inputlast' ng-model="storage.userLogos.lastName">
+          <input placeholder="what defines you?" class='inputdefined' ng-model="storage.userLogos.definedBy">
+        </div>
+        <div id="inputscolordesc">
+          <span>choose your color:</span>
+          <input class="inputcolor" type="color" ng-model="storage.userLogos.color"></input>
+        </div>
         <button class="submitbtn" ng-click="createLogos()">Submit</button>
       </form>
     </div>
-    <footer><hr><p><a href="https://github.com/Solano-Ventures">2014 Solano-Ventures</a></p></footer>
   </body>
 </html>
