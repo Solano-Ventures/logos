@@ -34,7 +34,6 @@ To run the application:
 1. Run the node server
 > 'node server.js'
 ```
-
 2. In a separate terminal window, run mongo
 > 'mongod'
 ```
