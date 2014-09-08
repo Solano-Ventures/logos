@@ -6,6 +6,7 @@ angular.module('LogosMain.controllers', [])
   .controller('MainController', function($scope, $state) {
     $scope.storage = {};
     $scope.storage.user = false;
+    $scope.storage.loginData = {};
 
     // The Logos Object is used to generate our image, it consists of
     // two fundamental parameters: a name and a value. Optionally
@@ -75,8 +76,7 @@ angular.module('LogosMain.controllers', [])
     $scope.visualize();
   })
   .controller('CreateController', function($scope, $state, $q, $http, RouterService, UtilityService) {
-    $scope.email = "" ;
-    $scope.password = "" ;
+
     $scope.createLogos = function() {
       console.log('fired');
       if (UtilityService.createValidate($scope.storage.userLogos)){
@@ -92,18 +92,14 @@ angular.module('LogosMain.controllers', [])
       });
       }
     };
-    $scope.signUp = function() {
-      RouterService.signUp();
-    };
-
   })
-  .controller('ShowLogoController', function($rootScope, $scope, $state, $http, $timeout) {
+  .controller('ShowLogoController', function($q, $rootScope, $scope, $state, $http, $timeout, RouterService) {
     //TEMP BELOW
     $scope.templogos = $scope.storage.logoMap;
     $scope.templogos = $scope.templogos.filter(function(string, index) { return index < 144; });
     //TEMP ABOVE
-    $scope.logos = {};
-    $scope.logos.map = [];
+    $scope.email = "" ;
+    $scope.password = "" ;
     $scope.fire = false;
     $scope.trigger = function() {
       $scope.fire = true;
@@ -114,8 +110,31 @@ angular.module('LogosMain.controllers', [])
         }, Math.random() * 8000 + 6000);
       }, 3000);
     };
+    $scope.signUp = function() {
+      var data = {};
+      data.logo = {};
+      data.logo.logo = $scope.storage.logoMap;
+      data.firstName = $scope.storage.userLogos.firstName;
+      data.lastName = $scope.storage.userLogos.lastName;
+      data.definedBy = $scope.storage.userLogos.definedBy;
+      data.color = $scope.storage.userLogos.color;
+      data.email = $scope.email;
+      data.password = $scope.password;
+      $http({
+        method : 'POST',
+        url : '/signup',
+        data : data
+      })
+      .then(
+        function(value) {
+          console.log('signup' + value);
+          console.log('signup' + value.data);
+          $scope.storage.loginData = value.data;
+           },
+        function(reason) { return reason; }
+        );
+    };
     $scope.visualize = function() {
-      console.log('visualize fired');
       if ($scope.currentLogos.length) {
         var publicLogos = $scope.currentLogos.pop();
         $scope.logos.firstName = publicLogos.firstName;
