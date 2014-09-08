@@ -151,4 +151,6 @@ angular.module('LogosMain.controllers', [])
       }
     };
     $scope.trigger();
+  })
+  .controller('AccountController', function($state, $scope) {
   });
