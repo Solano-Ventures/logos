@@ -27,14 +27,16 @@ angular.module('LogosMain',
       $stateProvider
       .state('home', {
         url: '/',
-        views: {
-          'feed' :  {url: '', templateUrl: 'feed/feed.html', controller: 'FeedController'},
-          'create' : {url: '', templateUrl: 'feed/create.html', controller: 'CreateController'}
-        }
+        templateUrl: 'feed/feed.html',
+        controller: 'FeedController',
       })
       .state('feed.logos', {
         templateUrl: 'feed/feed.logos.html',
         controller: 'LogosController',
+      })
+      .state('showLogo', {
+        templateUrl : 'feed/showlogo.html',
+        controller: 'ShowLogoController'
       });
 
     }

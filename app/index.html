@@ -23,9 +23,18 @@
     <div id="nav-bar" class="overlay">
       <button class='login' ng-hide="storage.user">Login</button>
     </div>
-    <section ui-view="feed"></section>
+    <section ui-view=""></section>
     <div class="create">
       <section class="create" ui-view="create"></section>
+    </div>
+    <div class='create' ng-controller="CreateController">
+      <input placeholder="first name" class='input' ng-model="storage.userLogos.firstName">
+      <input placeholder="last name" class='input' ng-model="storage.userLogos.lastName">
+      <input placeholder="defined by" class='input' ng-model="storage.userLogos.definedBy">
+      <button ng-click="createLogos()">Submit</button>
+      {{storage.userLogos.firstName}}
+      {{storage.userLogos.lastName}}
+      {{storage.userLogos.definedBy}}
     </div>
   </body>
 </html>
