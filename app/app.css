@@ -13,7 +13,7 @@ body {
   font-size: 48px;
   padding-left: 15%;
   display: inline-block;
-  color: RGBA(204, 204, 204, 1);
+  color: RGBA(244, 244, 186, 1);
   text-decoration: none;
   line-height: normal;
   -webkit-transition: 0.7s;
@@ -21,6 +21,23 @@ body {
   -ms-transition: 0.7s;
   -o-transition: 0.7s;
   transition: 0.7s;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+}
+
+footer p {
+  background-color: white;
+  font-size: 18px;
+  margin: 0;
+}
+
+footer p a,
+footer p a:hover {
+  text-decoration: none;
+  color: RGBA(72, 161, 251, .8);
 }
 
 #logosname a:hover,
@@ -110,11 +127,11 @@ body {
   display: inline-block;
   width: 160px;
   height: 54px;
-  border:3px solid RGBA(255, 75, 92, 1);
+  border:3px solid RGBA(244, 244, 186, 1);
   background-color: transparent;
   outline: none;
   font-size: 18px;
-  color:RGBA(255, 75, 92, 1);
+  color: RGBA(244, 244, 186, 1);
   font-family: 'Montserrat', sans-serif;
   /*margin-top: 10px;*/
   /*margin-right: 20px;*/
@@ -129,9 +146,9 @@ body {
 .signupbtn:hover,
 .submitbtn:hover,
 .createbtn:hover{
-  background-color: RGBA(255, 75, 92, 1);
+  background-color: RGBA(244, 244, 186, 1);
+  color: RGBA(72, 161, 251, 1);
   border:none;
-  color:white;
   -webkit-transition: 1s;
   -moz-transition: 1s;
   -ms-transition: 1s;
