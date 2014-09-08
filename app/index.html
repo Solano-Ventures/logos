@@ -25,19 +25,16 @@
       <button class="loginbtn" ng-hide="storage.user">Login</button>
     </div>
 
-    <div id="descriptionbar">Generate your own logo..!!</div>
-    
     <section ui-view=""></section>
     
     <div class='create' ng-controller="CreateController">
       <div> What are you about?</div>
-      <input placeholder="first name" class='input' ng-model="storage.userLogos.firstName">
-      <input placeholder="last name" class='input' ng-model="storage.userLogos.lastName">
-      <input placeholder="defined by" class='input' ng-model="storage.userLogos.definedBy">
-      <button ng-click="createLogos()">Submit</button>
-      {{storage.userLogos.firstName}}
-      {{storage.userLogos.lastName}}
-      {{storage.userLogos.definedBy}}
+      <form class="box">
+        <input placeholder="first name" class='input' ng-model="storage.userLogos.firstName">
+        <input placeholder="last name" class='input' ng-model="storage.userLogos.lastName">
+        <input placeholder="defined by" class='input' ng-model="storage.userLogos.definedBy">
+        <button class="submitbtn" ng-click="createLogos()">Submit</button>
+      </form>
     </div>
     <footer><hr><p><a href="https://github.com/Solano-Ventures">2014 Solano-Ventures</a></p></footer>
   </body>
