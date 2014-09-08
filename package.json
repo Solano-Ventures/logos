@@ -1,26 +1,18 @@
 {
-  "name": "logos",
-  "version": "1.0.0",
-  "description": "algorithmic based logo generator for users",
-  "main": "server.js",
+  "name": "LogosRebuild",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app/app.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Solano-Ventures/logos.git"
-  },
-  "author": "christopher mccloud, christopher singhavong, jonathan ng, jon sadka",
-  "license": "proprietary",
-  "bugs": {
-    "url": "https://github.com/Solano-Ventures/logos/issues"
-  },
-  "homepage": "https://github.com/Solano-Ventures/logos",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.7.0",
-    "express": "^4.8.6",
+    "body-parser": "^1.8.0",
+    "express": "^4.8.8",
     "grunt": "^0.4.5",
-    "mongodb": "^1.4.9",
+    "mongod": "^1.3.0",
     "mongoose": "^3.8.15"
   }
 }

@@ -50,8 +50,7 @@ angular.module('LogosMain.services', [])
     function createValidate(userLogos) {
       if (userLogos.firstName &&
           userLogos.lastName &&
-          userLogos.definedBy &&
-          userLogos.color) {
+          userLogos.definedBy) {
         return true;
       }
       return false;
