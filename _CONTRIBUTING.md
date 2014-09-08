@@ -31,11 +31,11 @@ Git Workflow
 
 To run the application:
 
-1. Run the node server
-> 'node server.js'
-```
-2. In a separate terminal window, run mongo
+1. Run mongo
 > 'mongod'
+```
+2. In a separate terminal window, run the node server
+> 'node server.js'
 ```
 3. In your browser, go to localhost:8000
 ```
