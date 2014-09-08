@@ -23,7 +23,6 @@ angular.module('LogosMain',
       //configure $stateRouters Here
 
       //States Container
-
       $stateProvider
       .state('home', {
         url: '/',
@@ -37,8 +36,10 @@ angular.module('LogosMain',
       .state('showLogo', {
         templateUrl : 'feed/showlogo.html',
         controller: 'ShowLogoController'
+      })
+      .state('account', {
+        templateUrl : 'feed/account.html',
       });
-
     }
     ]
 );
