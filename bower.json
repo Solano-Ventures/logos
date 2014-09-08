@@ -1,5 +1,5 @@
 {
-  "name": "GraciousUnicornsClientBuild",
+  "name": "logosClientBuild",
   "version": "1.0.0",
   "description": "initial client-side development environment",
   "main": "client/app.js",
